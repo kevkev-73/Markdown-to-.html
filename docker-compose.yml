@@ -1,0 +1,12 @@
+version: "3"
+services:
+  convertiseur:
+    build: .
+    volumes:
+      - ./Data:/home/Data
+  web:
+    image: php:apache
+    volumes:
+      - ./Data:/var/www/html
+    ports:
+      - ${SERVEUR_PORT}:80
